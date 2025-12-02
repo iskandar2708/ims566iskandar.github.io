@@ -1,0 +1,162 @@
+/* =========================
+   Global Styles
+========================= */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  flex: 1 0 auto;
+  background-color: #f8f9fa;
+}
+
+main {
+  flex-grow: 1;
+}
+
+/* Footer */
+footer {
+  flex-shrink: 0;
+  background: #f8f9fa;
+  text-align: center;
+  padding: 1rem 0;
+  border-top: 1px solid #dee2e6;
+}
+
+/* =========================
+   Navbar
+========================= */
+.navbar {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* =========================
+   Login & Register Pages
+========================= */
+body.login-bg {
+  background: linear-gradient(to right, #e0e7ff, #f7f7ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  width: 360px;
+  border-radius: 12px;
+  padding: 30px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.login-card img {
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+/* =========================
+   Cards
+========================= */
+.card {
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.dashboard-card {
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+.dashboard-card h5 {
+  margin-bottom: 0.5rem;
+}
+
+/* =========================
+   Tables
+========================= */
+.table-responsive {
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table th {
+  background: #6366f1;
+  color: #fff;
+  font-weight: 600;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f3f4f6;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #e0e7ff;
+}
+
+/* =========================
+   Charts
+========================= */
+canvas#attChart {
+  width: 100% !important;
+  height: 300px !important;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+/* =========================
+   Form Labels & Inputs
+========================= */
+.form-label {
+  font-weight: 500;
+}
+
+.form-control:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 0.2rem rgba(99, 102, 241, 0.25);
+}
+
+/* =========================
+   Profile Image
+========================= */
+.profile-img {
+  width: 100px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* =========================
+   Responsive Adjustments
+========================= */
+@media (max-width: 768px) {
+  .login-card, .card {
+    width: 100%;
+  }
+  .dashboard-card {
+    margin-bottom: 1rem;
+  }
+  .profile-img {
+    width: 80px;
+    height: 100px;
+  }
+}

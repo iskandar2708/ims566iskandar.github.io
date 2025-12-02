@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance - Student Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="dashboard.html">Student Portal</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link active" href="attendance.html">Attendance</a></li>
+        <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="flex-grow-1 container my-4">
+  <h3 class="mb-3">Attendance Record</h3>
+
+  <div class="row mb-4">
+    <div class="col-md-4 mb-2">
+      <div class="card text-center p-3 shadow">
+        <h6>Total Classes Attended</h6>
+        <p class="fs-4 fw-bold">106</p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-2">
+      <div class="card text-center p-3 shadow">
+        <h6>Total Subject</h6>
+        <p class="fs-4 fw-bold">8</p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-2">
+      <div class="card text-center p-3 shadow">
+        <h6>Average Attendance</h6>
+        <p class="fs-4 fw-bold">94.64%</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Attendance Table -->
+  <div class="table-responsive mb-4">
+    <table class="table table-bordered table-striped table-hover align-middle">
+      <thead>
+        <tr>
+          <th>Course</th>
+          <th>Attended</th>
+          <th>Total Classes (Week)</th>
+          <th>Percentage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>IMS565</td><td>14</td><td>14</td><td class="text-success">100%</td></tr>
+        <tr><td>IMS566</td><td>14</td><td>14</td><td class="text-success">100%</td></tr>
+        <tr><td>TAC451</td><td>13</td><td>14</td><td class="text-success">92.86%</td></tr>
+        <tr><td>IMR532</td><td>14</td><td>14</td><td class="text-success">100%</td></tr>
+        <tr><td>IMS564</td><td>13</td><td>14</td><td class="text-success">92.86%</td></tr>
+        <tr><td>CTU554</td><td>12</td><td>14</td><td class="text-warning">85.71%</td></tr>
+        <tr><td>LCC501</td><td>12</td><td>14</td><td class="text-warning">85.71%</td></tr>
+        <tr><td>IMS560</td><td>14</td><td>14</td><td class="text-success">100%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Attendance Chart -->
+  <div class="card p-3 shadow">
+    <h5>Attendance Chart</h5>
+    <canvas id="attChart"></canvas>
+  </div>
+</main>
+
+<footer class="text-center py-3 bg-light border-top mt-auto">
+  <p class="mb-0">© 2025 Student Portal. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('attChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['IMS565','IMS566','TAC451','IMR532','IMS564','CTU554','LCC501','IMS560'],
+      datasets: [{
+        label: 'Attendance %',
+        data: [100, 100, 92.86, 100, 92.86, 85.71, 85.71, 100],
+        backgroundColor: ['#10b981','#10b981','#10b981','#10b981','#10b981','#fbbf24','#fbbf24','#10b981']
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: { beginAtZero: true, max: 100 }
+      },
+      plugins: { legend: { display: false } }
+    }
+  });
+</script>
+
+<script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
